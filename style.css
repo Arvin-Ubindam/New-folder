@@ -10,44 +10,14 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
-/*this is the container of the svg(Welcome to Sebanji) */
-.container_for_ani {
-  background-image: url(beautiful-cartoon-fantasy-landscape-with-sunset-sunrise-mountain-range-cold-morning-mist-forest_730030-233.jpg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-}
+
 /*the link on the navbar*/
 a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-/*this is used to design the svg those lines animation*/
-svg path {
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 0.3;
-  stroke-dasharray: 550;
-  stroke-dashoffset: 550;
-  animation: textAnimation 4s ease-in-out 1 forwards;
-}
-/*this is the keyframes defining the textAnimation*/
-@keyframes textAnimation {
-  0% {
-    stroke-dashoffset: 550;
-  }
 
-  80% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: #fff;
-    stroke-dashoffset: 0;
-  }
-}
 /*the those content of the animationer banner*/
 .layout {
   width: 100vw;
@@ -126,8 +96,6 @@ a {
 }
 /*that is the content of items of the page layout*/
 .body {
-  display: flex;
-  justify-content: center;
   background-color: #f5f5f5;
 }
 /*that is the right side of the page layout*/
@@ -240,4 +208,57 @@ input:checked + .slider:before {
   transform: translateX(13px);
 }
 
+/*this is the container of the svg(Welcome to Sebanji) */
+.container_for_ani {
+  background-image: url(beautiful-cartoon-fantasy-landscape-with-sunset-sunrise-mountain-range-cold-morning-mist-forest_730030-233.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+/*this is used to design the svg those lines animation*/
+svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.3;
+  stroke-dasharray: 550;
+  stroke-dashoffset: 550;
+  animation: textAnimation 4s ease-in-out 1 forwards;
+}
+/*this is the keyframes defining the textAnimation*/
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 550;
+  }
+
+  80% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+.search-bar{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 15px;
+}
+
+#search-input, #category-selection{
+  padding: 10px;
+  font-size: 16px;
+}
+
+.items{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+}
 /* finally I am done with this css it is so stressful thinking alone😭🫡 */
+

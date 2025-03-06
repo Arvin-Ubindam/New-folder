@@ -35,7 +35,38 @@
             </label>
         </div>
         <div class="body">
-            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for an item here....">
+                <select id="category-selection">
+                    <option value="all">All Category</option>
+                    <option value="girls-cloths">Girls Cloths</option>
+                    <option value="girls-shoes">Girls Shoes</option>
+                    <option value="girls-bags">Girls Bags</option>
+                    <option value="boys-cloths">Boys Cloths</option>
+                    <option value="boys-shoes">Boys Shoes</option>
+                    <option value="boys-bags">Boys Bags</option>
+                    <option value="women-cloths">Women Cloths</option>
+                    <option value="women-shoes">Women Shoes</option>
+                    <option value="women-bags">Women Bags</option>
+                    <option value="men-cloths">Men Cloths</option>
+                    <option value="men-shoes">Men Shoes</option>
+                    <option value="men-bags">Men Bags</option>
+                    <option value="women-accessories">Women Accessories</option>
+                    <option value="men-accessories">Men Accessories</option>
+                </select>
+            </div>
+            <div class="items" id="items">
+                <!--the items would be aded here by using js-->
+            </div>
+            <div id="item-detail" class="hidden">
+                <button id="close-detail">Close</button>
+                <h2 id="detail-name"></h2>
+                <p id="detail-description"></p>
+                <p><strong>Price:</strong> $<span id="detail-price"></span></p>
+                <label for="quantity">Quantity: </label>
+                <input type="number" id="quantity" min="1" value="1">
+                <button id="add-to-cart">Add to Cart</button>
+              </div>
         </div>
         <div class="rightSide">
             <div class="cart">
@@ -49,4 +80,4 @@
       
 </body>
 <script src="script.js"></script>
-</html>
+</html>\
