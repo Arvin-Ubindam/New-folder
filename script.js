@@ -1,9 +1,13 @@
 // Sample items data with categories
 const items = [
-    { id: 1, name: "Running Shoes", price: 50, category: "shoes", description: "Comfortable running shoes." },
-    { id: 2, name: "Casual Shoes", price: 40, category: "shoes", description: "Stylish casual shoes." },
-    { id: 3, name: "Party Dress", price: 100, category: "girls-clothes", description: "Elegant party dress." },
-    { id: 4, name: "Summer Dress", price: 70, category: "girls-clothes", description: "Lightweight summer dress." },
+    { id: 1, image: "imgs/GG_Embelm_Belt_bag.webp", name: "GG Embelm Belt Bag", price: 50, category: "men-bags", description: "Lightweight bag and comfortable to hug.", stock:"In stock" },
+    { id: 2, image: "imgs/Light-Small-GG-crossbody-bag-with-Web.avif", name: "GG black bag", price: 40, category: "men-bags", description: "Stylish casual shoes.", stock:"In stock" },
+    { id: 3, image: "imgs/original_gucci_shoe_men1.avif", name: "GG brown shoe", price: 100, category: "men-shoes", description: "Elegant party dress.", stock:"In stock" },
+    { id: 4, image: "imgs/Superstar_II_Shoes_White_JI0124_01_standard.avif", name: "Superstar || shoe", price: 70, category: "girls-clothes", description: "Lightweight summer dress.", stock:"In stock" },
+    { id: 4, image: "imgs/Speedcat-OG-Women's-Sneakers.avif", name: "Speedcat OG", price: 70, category: "women-shoes", description: "Stylish casual shoes.", stock:"In stock" },
+    { id: 3, image: "imgs/gucci_shoe_men.avif", name: "GG modern shoe", price: 100, category: "men-shoes", description: "Elegant party dress.", stock:"In stock" },
+    { id: 3, image: "imgs/kids_crocs.jpg", name: "Modern Kids Cros", price: 100, category: "boys-shoes", description: "Elegant party dress.", stock:"In stock" },
+    
   ];
   
   let cart = [];
@@ -29,9 +33,10 @@ const items = [
       const itemDiv = document.createElement("div");
       itemDiv.className = "item";
       itemDiv.innerHTML = `
-        <h3>${item.name}</h3>
-        <p>Price: $${item.price}</p>
-        
+        <img src="${item.image}">
+        <h3 class="content">${item.name}</h3>
+        <p class="price">Price: $${item.price}</p>
+        <span>${item.stock}</span>
       `;
       itemDiv.addEventListener("click", () => showItemDetail(item));
       itemsContainer.appendChild(itemDiv);

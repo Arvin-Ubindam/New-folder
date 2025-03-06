@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
 }
+
+
 /*this is the font, height of the webpage and the overflow-x prevent the x axis to be able to scroll*/
 body {
   font-family: "Anta", sans-serif;
@@ -92,7 +94,7 @@ a {
   justify-content: center;
   color: #333333;
   width: 8vw;
-  height: 85vh;
+  height: 100%;
 }
 /*that is the content of items of the page layout*/
 .body {
@@ -107,7 +109,7 @@ a {
   justify-content: space-between;
   color: #333333;
   width: 8vw;
-  height: 85vh;
+  height: 100%;
 }
 /*that is the cart container */
 .cart {
@@ -257,8 +259,149 @@ svg path {
 .items{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
   padding: 10px;
 }
+
+.navigation-logos{
+  width: 20px;
+}
+
+img{
+  width: 200px;
+}
+
+.item{
+  width: 240px;
+  height: 300px;
+  border-radius: 15px;
+  display: flex;
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item img{
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 10px solid #ffffff;
+  border-bottom-right-radius: 50px;
+  height: 200px;
+  border-radius: 15px;
+}
+
+
+.item .content{
+  position: relative;
+  width: 100%;
+  height: 140px;
+  background-color: #232949;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  z-index: 1;
+}
+
+.item  .price{
+  position: relative;
+  content: '';
+  width: 100px;
+  height: 69px;
+  background-color: #232949;
+  bottom: 71px;
+  left: -65px;
+  border-top: white 10px solid;
+  border-right: white 10px solid;
+  border-top-right-radius: 25px;
+}
+
+
+.item .price::before{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: -10px -10px 0 #fff;
+}
+
+.item .price::after{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 0;
+  right: -25px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #232949;
+}
+
+
+.item .content::before{
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 20px;
+  bottom: -18px;
+  background-color: #232949;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 15px;
+  border-right: 10px solid #232949;
+}
+
+.item .content::after{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: -25px;
+  right: 55px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #232949;
+  transform: rotate(85deg);
+} 
+
+.item .content .stock{
+  position: absolute;
+  background: rgba(180, 180, 180, 0.833);
+  height: 20px;
+  width: 60px;
+  border-radius: 6px;
+  bottom: -25px;
+  right: 20px;
+}
+
+.hidden{
+  display: none;
+}
+
+.item:hover{
+  scale: 1.04;
+}
+
+.item span{
+  position: relative;
+  font-size: small;
+  background-color: yellow;
+  width: 70px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  left: 78px;
+  top: -28px;
+}
+
+
 /* finally I am done with this css it is so stressful thinking alone😭🫡 */
+
 
