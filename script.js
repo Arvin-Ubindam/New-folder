@@ -1,7 +1,7 @@
 // Sample items data with categories
 const items = [
     { id: 1, image: "imgs/GG_Embelm_Belt_bag.webp", name: "GG Embelm Belt Bag", price: 50, category: "men-bags", description: "Lightweight bag and comfortable to hug.", stock:"In stock" },
-    { id: 2, image: "imgs/Light-Small-GG-crossbody-bag-with-Web.avif", name: "GG black bag", price: 40, category: "men-bags", description: "Stylish casual shoes.", stock:"In stock" },
+    { id: 2, image: "imgs/Light-Small-GG-crossbody-bag-with-Web.avif", name: "GG black bag", price: 40, category: "men-bags", description: "Stylish casual shoes.", stock:"10 left" },
     { id: 3, image: "imgs/original_gucci_shoe_men1.avif", name: "GG brown shoe", price: 100, category: "men-shoes", description: "Elegant party dress.", stock:"In stock" },
     { id: 4, image: "imgs/Superstar_II_Shoes_White_JI0124_01_standard.avif", name: "Superstar || shoe", price: 70, category: "girls-clothes", description: "Lightweight summer dress.", stock:"In stock" },
     { id: 4, image: "imgs/Speedcat-OG-Women's-Sneakers.avif", name: "Speedcat OG", price: 70, category: "women-shoes", description: "Stylish casual shoes.", stock:"In stock" },

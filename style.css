@@ -5,6 +5,9 @@
   padding: 0;
 }
 
+:root{
+  --colour: #f5f5f5;
+}
 
 /*this is the font, height of the webpage and the overflow-x prevent the x axis to be able to scroll*/
 body {
@@ -12,6 +15,8 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+
+
 
 /*the link on the navbar*/
 a {
@@ -289,7 +294,7 @@ img{
   width: 100%;
   background-size: cover;
   background-position: center;
-  border-bottom: 10px solid #ffffff;
+  border-bottom: 10px solid var(--colour);
   border-bottom-right-radius: 50px;
   height: 200px;
   border-radius: 15px;
@@ -297,10 +302,12 @@ img{
 
 
 .item .content{
+  display: flex;
+  color: #f9f9f9;
   position: relative;
   width: 100%;
   height: 140px;
-  background-color: #232949;
+  background-color: rgb(193, 193, 193);
   border-radius: 15px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -310,13 +317,14 @@ img{
 .item  .price{
   position: relative;
   content: '';
+  color: #f9f9f9;
   width: 100px;
   height: 69px;
-  background-color: #232949;
+  background-color: rgb(193, 193, 193);
   bottom: 71px;
   left: -65px;
-  border-top: white 10px solid;
-  border-right: white 10px solid;
+  border-top: var(--colour) 10px solid;
+  border-right: var(--colour) 10px solid;
   border-top-right-radius: 25px;
 }
 
@@ -328,7 +336,7 @@ img{
   height: 25px;
   background: transparent;
   border-radius: 50%;
-  box-shadow: -10px -10px 0 #fff;
+  box-shadow: -10px -10px 0 var(--colour);
 }
 
 .item .price::after{
@@ -337,10 +345,10 @@ img{
   width: 25px;
   height: 25px;
   bottom: 0;
-  right: -25px;
+  right: -21px;
   background: transparent;
   border-radius: 50%;
-  box-shadow: -10px 10px 0 #232949;
+  box-shadow: -10px 10px 0 rgb(193, 193, 193);
 }
 
 
@@ -350,10 +358,10 @@ img{
   width: 150px;
   height: 20px;
   bottom: -18px;
-  background-color: #232949;
+  background-color: rgb(193, 193, 193);
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 15px;
-  border-right: 10px solid #232949;
+  border-right: 10px solid rgb(193, 193, 193);
 }
 
 .item .content::after{
@@ -362,22 +370,12 @@ img{
   width: 25px;
   height: 25px;
   bottom: -25px;
-  right: 55px;
+  right: 56px;
   background: transparent;
   border-radius: 50%;
-  box-shadow: -10px 10px 0 #232949;
+  box-shadow: -10px 10px 0 rgb(193, 193, 193);
   transform: rotate(85deg);
 } 
-
-.item .content .stock{
-  position: absolute;
-  background: rgba(180, 180, 180, 0.833);
-  height: 20px;
-  width: 60px;
-  border-radius: 6px;
-  bottom: -25px;
-  right: 20px;
-}
 
 .hidden{
   display: none;
@@ -385,12 +383,14 @@ img{
 
 .item:hover{
   scale: 1.04;
+  cursor: pointer;
 }
 
 .item span{
   position: relative;
   font-size: small;
-  background-color: yellow;
+  background-color: rgba(236, 255, 27, 0.493);
+  color: #fdfdfd;
   width: 70px;
   height: 60px;
   display: flex;
@@ -401,7 +401,61 @@ img{
   top: -28px;
 }
 
+.item span::before{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: -10px 10px 0 var(--colour);
+  bottom: 92px;
+  left: -163px;
 
+}
+
+.item span::after{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: -10px 10px 0 var(--colour);
+  transform: rotate(265deg);
+  bottom: 72px;
+  left: 52.5px;
+
+}
+
+.item span:hover{
+  background-color: rgba(236, 255, 27, 0.744);
+}
+
+.dark-mode .item span:hover{
+  background-color: rgba(255, 255, 0, 0.911);
+  color: #ffffff;
+}
+
+.dark-mode .item span{
+  color: #e4e4e4;
+  background-color: yellow;
+}
+.dark-mode .price, .dark-mode .content{
+  background-color: #293682;
+}
+
+.dark-mode .price::after, .dark-mode .content::after{
+  box-shadow: -10px 10px 0 #293682;
+}
+
+.dark-mode .content::before{
+  border-right: 10px solid #293682;
+  background-color: #293682;
+}
+.dark-mode{
+  --colour: #1a1a1a;
+}
 /* finally I am done with this css it is so stressful thinking alone😭🫡 */
 
 
