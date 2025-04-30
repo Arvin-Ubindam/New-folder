@@ -25,42 +25,14 @@
     </div>
     <section class="layout">
       <div class="header">
-        <ol>
-          <ul>
-            <li>
-              <a href="#"
-                ><span
-                  ><img class="navigation-logos" src="home.png" width="20px"
-                /></span>
-                <p class="nav1">Home</p></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><span
-                  ><img class="navigation-logos" src="about.png" width="20px"
-                /></span>
-                <p class="nav2">About</p></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><span
-                  ><img class="navigation-logos" src="call.png" width="20px"
-                /></span>
-                <p class="nav3">Contact</p></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><span
-                  ><img class="navigation-logos" src="help.png" width="20px"
-                /></span>
-                <p class="nav4">Help</p></a
-              >
-            </li>
-          </ul>
-        </ol>
+        <nav>
+          <a href="Home"><p>Home</p></a>
+          <a href="Contact"><p>Contact</p></a>
+          <a href="Help"><p>Help</p></a>
+          <a href="About"><p>About</p></a>
+          <a href="Blog"><p>Blog</p></a>
+          <div class="animation start-home"></div>
+        </nav>
       </div>
       <div class="leftSide">
         <label class="switch">
@@ -92,22 +64,45 @@
             <option value="women-accessories">Women Accessories</option>
             <option value="men-accessories">Men Accessories</option>
             <option value="tech-gadgets">Technology</option>
+            <option value="Fragrance-and-beauty">Fragrance and Beauty</option>
           </select>
         </div>
         <div class="items" id="items">
           <!--the items would be aded here by using js-->
         </div>
         <div id="item-detail" class="hidden">
-          <button id="close-detail">
-            <img src="close.svg" width="20px" height="20px" style="background: transparent;" />
-          </button>
-          <h2 id="detail-name"></h2>
-          <div id="detail-image"></div>
+          <span id="close-detail">X</span>
+          <img id="detail-image" alt="">
+          <h3 id="detail-name"></h3>
           <p id="detail-description"></p>
-          <p><strong>Price:</strong> $<span id="detail-price"></span></p>
-          <label for="quantity">Quantity: </label>
-          <input type="number" id="quantity" min="1" value="1" />
-          <button id="add-to-cart">Add to Cart</button>
+          <p id="detail-price"></p>
+          <div class="info_for_purchase">
+            <input type="number" id="quantity" min="1" value="1">
+            <button id="add-to-cart">Add to Cart</button>
+            <button id="buy-now">Buy Now</button>
+          </div>
+          <div class="other_side">
+           <div class="item-clr_selection">
+            <p>Colour:</p>
+            <select id="item-colours">
+              <option value="black">Black</option>
+              <option value="brown">Brown</option>
+              <option value="pink">Pink</option>
+              <option value="blue">Blue</option>
+            </select>
+           </div>
+           <div class="item-size_selection">
+            <p>Size:</p>
+            <select id="item-size">
+              <option value="medium">M</option>
+              <option value="small">S</option>
+              <option value="large">L</option>
+              <option value="Extra large">XL</option>
+            </select>
+           </div>
+            <p>✔ Free shipping</p>
+            <p>✔ 30-day returns</p>
+          </div>
         </div>
       </div>
       <div class="rightSide">
