@@ -303,7 +303,7 @@ input:checked + .slider:before {
 }
 
 /*this is used to design the svg those lines animation*/
-svg path {
+.text > svg path {
   fill: transparent;
   stroke: white;
   stroke-width: 0.3;
