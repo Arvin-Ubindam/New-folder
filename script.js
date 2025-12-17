@@ -213,8 +213,7 @@ const items = [
   },
   {
     id: 18,
-    image:
-      "imgs/Mascara.jpeg",
+    image: "imgs/Mascara.jpeg",
     name: "Mascara",
     price: 480,
     category: "Fragrance-and-beauty",
@@ -225,8 +224,7 @@ const items = [
   },
   {
     id: 19,
-    image:
-      "imgs/8a6c12b1-52d5-4df2-bac1-cf89c287c2fc.jpeg",
+    image: "imgs/8a6c12b1-52d5-4df2-bac1-cf89c287c2fc.jpeg",
     name: "Moisturizing Lip Gloss",
     price: 480,
     category: "Fragrance-and-beauty",
@@ -237,8 +235,7 @@ const items = [
   },
   {
     id: 20,
-    image:
-      "imgs/Y0000010_E000000093_E01_GHC.webp",
+    image: "imgs/Y0000010_E000000093_E01_GHC.webp",
     name: "Forever Glow Luminizer",
     price: 480,
     category: "Fragrance-and-beauty",
@@ -249,8 +246,7 @@ const items = [
   },
   {
     id: 21,
-    image:
-      "imgs/A036AAAB-02E0-41BC-8AE5-C51974918AC0.webp",
+    image: "imgs/A036AAAB-02E0-41BC-8AE5-C51974918AC0.webp",
     name: "Burberry Goddess",
     price: 480,
     category: "Fragrance-and-beauty",
@@ -261,8 +257,7 @@ const items = [
   },
   {
     id: 22,
-    image:
-      "imgs/comfortable_shoe.jpg",
+    image: "imgs/comfortable_shoe.jpg",
     name: "Boy Shoe",
     price: 480,
     category: "boy-shoes",
@@ -273,8 +268,7 @@ const items = [
   },
   {
     id: 23,
-    image:
-      "imgs/C68106E4-323F-4A49-B5F1-0356DF81848A.webp",
+    image: "imgs/C68106E4-323F-4A49-B5F1-0356DF81848A.webp",
     name: "Goddess Perfume",
     price: 480,
     category: "Fragrance-and-beauty",
@@ -363,19 +357,7 @@ const items = [
     rating_icon: "rating-icons/5_star.png",
     rating: "10K reviews",
   },
-  {
-    id: 30,
-    image: "imgs/NFNTY-52 Sneakers.avif",
-    name: "NFNTY-52 Sneakers",
-    price: 3450,
-    category: "men-shoes",
-    description: "Elegant party dress.",
-    stock: "In stock",
-    rating_icon: "rating-icons/5_star.png",
-    rating: "10K reviews",
-  },
 ];
-
 
 let cart = [];
 let filteredItems = [...items];
@@ -395,8 +377,6 @@ const categorySelect = document.getElementById("category-selection");
 const ItemDetail = document.getElementById("item-detail");
 itemDetail.classList.add("hidden");
 
-
-
 function renderItems() {
   itemsContainer.innerHTML = "";
   filteredItems.forEach((item) => {
@@ -405,7 +385,7 @@ function renderItems() {
     itemDiv.innerHTML = `
       <img src="${item.image}" alt="${item.name}" class="img">
       <h3 class="content">${item.name}</h3>
-      <p class="price">Price: £${item.price}</p>
+      <p class="price"><span class="price_text">Price: £${item.price}</span></p>
       <img src="${item.rating_icon}" class="rating-icon">
       <p class="rating">${item.rating}</p>
       <span class="stockStatus">${item.stock}</span>
@@ -415,23 +395,22 @@ function renderItems() {
   });
 }
 
-
 function showItemDetail(item) {
   // Update all detail elements
   detailName.textContent = item.name;
   detailDescription.textContent = item.description;
   detailPrice.textContent = `£${item.price}`;
-  
+
   // Properly set the image
   detailImage.src = item.image;
   detailImage.alt = item.name;
-  
+
   // Load event to handle image loading
-  detailImage.onload = function() {
+  detailImage.onload = function () {
     console.log("Image loaded successfully:", item.image);
   };
-  
-  detailImage.onerror = function() {
+
+  detailImage.onerror = function () {
     console.error("Failed to load image:", item.image);
     detailImage.src = "imgs/placeholder.jpg"; // Fallback image
   };
@@ -500,6 +479,120 @@ function updateStockStatus() {
     }
   });
 }
+
+// Sign up and in account button
+
+const modal = document.getElementById("authModal");
+const closeBtn = document.getElementById("closeAuth");
+const forms = document.querySelector(".forms");
+
+const toSignup = document.getElementById("toSignup");
+const toSignin = document.getElementById("toSignin");
+
+const signupPassword = document.getElementById("signupPassword");
+const signupEmail = document.getElementById("signupEmail");
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+
+const accountBtn = document.getElementById("accountBtn"); // Account button
+
+/* OPEN MODAL */
+function openAuth() {
+  modal.style.display = "flex";
+}
+
+/* CLICK ON ACCOUNT TO OPEN MODAL */
+accountBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  openAuth();
+});
+
+
+
+
+/* CLOSE MODAL */
+closeBtn.onclick = () => modal.style.display = "none";
+
+/* SLIDE BETWEEN SIGN IN & SIGN UP */
+toSignup.onclick = e => {
+  e.preventDefault();
+  forms.classList.add("signup-active");
+};
+
+toSignin.onclick = e => {
+  e.preventDefault();
+  forms.classList.remove("signup-active");
+};
+
+/* PASSWORD STRENGTH */
+signupPassword.addEventListener("input", () => {
+  const val = signupPassword.value;
+  if (val.length < 6) {
+    strengthText.textContent = "Weak password";
+    strengthText.style.color = "red";
+  } else if (/[A-Z]/.test(val) && /\d/.test(val)) {
+    strengthText.textContent = "Strong password";
+    strengthText.style.color = "green";
+  } else {
+    strengthText.textContent = "Medium strength";
+    strengthText.style.color = "orange";
+  }
+});
+
+/* AUTH LOGIC (LOCAL STORAGE) */
+document.getElementById("signupForm").onsubmit = e => {
+  e.preventDefault();
+  localStorage.setItem("userEmail", signupEmail.value);
+  localStorage.setItem("userPassword", signupPassword.value);
+  alert("Account created successfully!");
+  forms.classList.remove("signup-active");
+  modal.style.display = "none"; // Close modal after signup
+};
+
+document.getElementById("signinForm").onsubmit = e => {
+  e.preventDefault();
+  if (
+    loginEmail.value === localStorage.getItem("userEmail") &&
+    loginPassword.value === localStorage.getItem("userPassword")
+  ) {
+    alert("Login successful!");
+    modal.style.display = "none";
+  } else {
+    alert("Invalid login details");
+  }
+};
+
+const signUpPassword = document.getElementById("signupPassword");
+
+const ruleLength = document.getElementById("rule-length");
+const ruleNumber = document.getElementById("rule-number");
+const ruleCase = document.getElementById("rule-case");
+
+signupPassword.addEventListener("input", () => {
+  const value = signUpPassword.value;
+
+  // Rules
+  const hasLength = value.length >= 8;
+  const hasNumber = /[0-9!@#$%^&*]/.test(value);
+  const hasCase = /[a-z]/.test(value) && /[A-Z]/.test(value);
+
+  updateRule(ruleLength, hasLength, value);
+  updateRule(ruleNumber, hasNumber, value);
+  updateRule(ruleCase, hasCase, value);
+});
+
+function updateRule(element, isValid, value) {
+  element.classList.remove("valid", "warning");
+
+  if (!value) return;
+
+  if (isValid) {
+    element.classList.add("valid");
+  } else {
+    element.classList.add("warning");
+  }
+}
+
 
 window.addEventListener("load", function () {
   itemDetail.classList.add("hidden");

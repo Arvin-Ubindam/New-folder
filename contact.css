@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
+/*this is the general padding and margin of the page*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --colour: #f5f5f5;
+  --bc_colour: #fff;
+}
+
+/*this is the font, height of the webpage and the overflow-x prevent the x axis to be able to scroll*/
+body {
+  font-family: "Anta", sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/*the link on the navbar*/
+a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*the those content of the animationer banner*/
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 8vw 1fr 8vw;
+  grid-template-areas:
+    "header header header"
+    "leftSide body rightSide"
+    "footer footer footer";
+}
+/*these are the gris-area that place them in they places*/
+.header {
+  grid-area: header;
+}
+.leftSide {
+  grid-area: leftSide;
+}
+.body {
+  grid-area: body;
+}
+.rightSide {
+  grid-area: rightSide;
+}
+.footer {
+  grid-area: footer;
+}
+nav {
+  position: relative;
+  width: auto;
+  height: 50px;
+  z-index: 1;
+}
+/*the links code*/
+nav a {
+  text-decoration: none;
+  color: #333333;
+  text-transform: uppercase;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+
+nav .animation {
+  position: absolute;
+  height: 5px;
+  bottom: 0;
+  z-index: 0;
+  background: #4292ed;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+
+a:nth-child(1) {
+  width: 100px;
+}
+
+a:nth-child(1) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-home,
+a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+}
+
+a:nth-child(2) {
+  width: 130px;
+}
+
+a:nth-child(2) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-contact,
+a:nth-child(2):hover ~ .animation {
+  width: 120px;
+  left: 110px;
+}
+
+a:nth-child(3) {
+  width: 100px;
+}
+
+a:nth-child(3) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-help,
+a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 240px;
+}
+
+a:nth-child(4) {
+  width: 110px;
+}
+
+a:nth-child(4) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-about,
+a:nth-child(4):hover ~ .animation {
+  width: 110px;
+  left: 340px;
+}
+
+a:nth-child(5) {
+  width: 100px;
+}
+
+a:nth-child(5) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-blog,
+a:nth-child(5):hover ~ .animation {
+  width: 100px;
+  left: 460px;
+}
+/*that is the nav bar containing the links*/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333333;
+  height: 50px;
+}

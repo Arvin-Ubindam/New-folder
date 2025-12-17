@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+
 /*this is the general padding and margin of the page*/
 * {
   margin: 0;
@@ -6,13 +10,13 @@
 }
 
 :root {
-  --colour: #f5f5f5;
-  --bc_colour: #fff;
+  --color: #f5f5f5;
+  --bc_color: #fff;
 }
 
 /*this is the font, height of the webpage and the overflow-x prevent the x axis to be able to scroll*/
 body {
-  font-family: "Anta", sans-serif;
+  font-family: "", sans-serif;
   height: 100%;
   overflow-x: hidden;
 }
@@ -24,7 +28,7 @@ a {
   justify-content: center;
 }
 
-/*the those content of the animationer banner*/
+/*the those content of the animation banner*/
 .layout {
   width: 100vw;
   height: 100vh;
@@ -78,6 +82,11 @@ nav .animation {
   background: #4292ed;
   border-radius: 8px;
   transition: all 0.5s ease 0s;
+}
+
+nav .account-link {
+  margin-left: auto; /* pushes it to the right */
+  font-weight: 600;
 }
 
 a:nth-child(1) {
@@ -209,38 +218,38 @@ a:nth-child(5):hover ~ .animation {
   margin-top: auto;
   padding-top: 5px;
 }
-/*the dark toogle mode it show slowing change and the layout should be #1a1a1a*/
+/*the dark toggle mode it show slowing change and the layout should be #1a1a1a*/
 .dark-mode {
   transition: 0.3s;
   background-color: #1a1a1a;
 }
-/*this applies the dark mode cahnges to the header and fotter*/
+/*this applies the dark mode changes to the header and footer*/
 .dark-mode .header,
 .dark-mode .footer {
   background-color: #252525;
   color: #f5f5f5;
 }
-/*this applies to the dark mode change on the bady layout*/
+/*this applies to the dark mode change on the body layout*/
 .dark-mode .body {
   background-color: #121212;
   color: #f5f5f5;
 }
-/*this applies to the cahnges when the li is hovered*/
+/*this applies to the changes when the li is hovered*/
 .dark-mode li:hover {
   scale: 1.1;
   border-bottom: 1px solid #f5f5f5;
 }
-/*the colour of the right layout and left layout when then drak mode happens*/
+/*the color of the right layout and left layout when then dark mode happens*/
 .dark-mode .rightSide,
 .dark-mode .leftSide {
   background-color: #3a3a3a;
   color: #f5f5f5;
 }
-/*the total when the toogle is dark */
+/*the total when the toggle is dark */
 .dark-mode .total {
   border-top: 2px solid #666666;
 }
-/*that happnes to the link when thedark mode is appilied */
+/*that happens to the link when the dark mode is applied */
 .dark-mode a {
   color: #f5f5f5;
 }
@@ -260,7 +269,7 @@ a:nth-child(5):hover ~ .animation {
   width: 0;
   height: 0;
 }
-/*this is the span creating the cirle*/
+/*this is the span creating the circle*/
 .slider {
   position: absolute;
   top: 0;
@@ -272,7 +281,7 @@ a:nth-child(5):hover ~ .animation {
   border-radius: 34px;
   cursor: pointer;
 }
-/*this is the code for the span before so it should have nothing in it it should have a certain height and width, how is transiton and the border raduis*/
+/*this is the code for the span before so it should have nothing in it it should have a certain height and width, how is transition and the border radius*/
 .slider::before {
   position: absolute;
   left: 2px;
@@ -284,11 +293,11 @@ a:nth-child(5):hover ~ .animation {
   border-radius: 34px;
   content: "";
 }
-/*this code is when the input is clicked and the silder should be rgb(127, 255, 146)*/
+/*this code is when the input is clicked and the slider should be rgb(127, 255, 146)*/
 input:checked + .slider {
   background-color: rgb(127, 255, 146);
 }
-/*this code is for the movement of the cirle*/
+/*this code is for the movement of the circle*/
 input:checked + .slider:before {
   transform: translateX(13px);
 }
@@ -335,7 +344,7 @@ input:checked + .slider:before {
 }
 
 .dark-mode {
-  --bc_colour: #1e1e1e;
+  --bc_color: #1e1e1e;
 }
 
 #search-input,
@@ -382,12 +391,13 @@ img {
   background-size: cover;
   background-position: center;
   border-radius: 15px;
-  border-bottom: 10px solid var(--colour);
+  border-bottom: 10px solid var(--color);
   border-bottom-right-radius: 0;
 }
 
 .item .content {
   display: flex;
+  padding-left: 7px;
   z-index: 2;
   color: #333333;
   position: relative;
@@ -400,6 +410,7 @@ img {
 }
 
 .item .price {
+
   z-index: 1;
   position: relative;
   content: "";
@@ -410,9 +421,15 @@ img {
   background-color: #ffffff;
   bottom: 50px;
   left: -55px;
-  border-top: var(--colour) 10px solid;
-  border-right: var(--colour) 10px solid;
+  border-top: var(--color) 10px solid;
+  border-right: var(--color) 10px solid;
   border-top-right-radius: 25px;
+  align-items: center;
+  justify-content: end;
+}
+
+.price_text{
+  padding-left: 17px;
 }
 
 .item .price::before {
@@ -422,7 +439,7 @@ img {
   height: 25px;
   background: transparent;
   border-radius: 50%;
-  box-shadow: -10px -10px 0 var(--colour);
+  box-shadow: -10px -10px 0 var(--color);
 }
 
 .item .price::after {
@@ -455,11 +472,11 @@ img {
   position: absolute;
   width: 25px;
   height: 25px;
-  bottom: -2px;
+  bottom: -4px;
   right: 0;
-  background: var(--bc_colour);
+  background: var(--bc_color);
   border-radius: 50%;
-  box-shadow: -10px 10px 0 var(--colour);
+  box-shadow: -10px 10px 0 var(--color);
   transform: rotate(180deg);
 }
 
@@ -493,7 +510,7 @@ img {
   height: 25px;
   border-radius: 50%;
   background-color: transparent;
-  box-shadow: -10px 10px 0 var(--colour);
+  box-shadow: -10px 10px 0 var(--color);
   bottom: 104px;
   left: -163px;
 }
@@ -525,7 +542,7 @@ option {
   border-right: 10px solid #1e1e1e;
 }
 .dark-mode {
-  --colour: #121212;
+  --color: #121212;
 }
 
 .dark-mode .item,
@@ -539,7 +556,7 @@ option {
   display: none;
 }
 
-#item-detail {
+.main_side {
   font-family: "Anta", sans-serif;
   background-color: #ffffff;
   width: 300px;
@@ -559,26 +576,64 @@ option {
   gap: 10px;
 }
 
-#item-detail::before{
-  position: absolute;
-  content: "";
-  background: #5da2f1;
+.dark-mode .main_side {
+  font-family: "Anta", sans-serif;
+  background-color: var(--bc_color);
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  height: 452px;
-  top: 0;
-  left: 100%;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .other_side{
+  font-family: "Anta", sans-serif;
+  background-color: #4292ed;
+  width: 300px;
+  height: 412px;
+  padding: 20px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 0;
-  color: whitesmoke;
-  left: 110%;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-mode .other_side{
+  font-family: "Anta", sans-serif;
+  background-color: #4292ed;
+  width: 300px;
+  height: 412px;
+  padding: 20px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .other_side> p{
@@ -684,6 +739,220 @@ button:hover ~ .gradient-text{
 .dark-mode .rating-icon {
   background-color: #1e1e1e;
 }
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.auth-card {
+  background: #fff;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.forms-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* SLIDE */
+.forms {
+  display: flex;
+  width: 200%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.form {
+  width: 50%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 28px;   /* 👈 padding lives HERE */
+}
+
+
+.forms.signup-active {
+  transform: translateX(-50%);
+}
+
+h2 {
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: .9rem;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+/* INPUT WITH ICON */
+.input-group {
+  width: 85%;
+  position: relative;
+  margin-bottom: 14px;
+}
+
+
+.input-group i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #888;
+}
+
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+}
+
+.primary-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* SOCIAL */
+
+.social .btn> #icon,#icon1,#icon2{
+  width: 28px;
+  background: none;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 10px;
+}
+
+.social button {
+  background: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.social button:hover {
+  background: #f5f7fb;
+}
+
+
+
+/* PASSWORD STRENGTH */
+.strength {
+  font-size: .8rem;
+  margin-bottom: 12px;
+}
+
+/* SWITCH */
+.switch{
+  margin-top: 14px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.switch p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.switch a {
+  display: inline-flex;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+.password-rules {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 14px;
+  font-size: 0.8rem;
+}
+
+.password-rules li {
+  color: #9ca3af; /* gray */
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Tick icon */
+.password-rules li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  font-weight: bold;
+}
+
+/* Rule satisfied */
+.password-rules li.valid {
+  color: #16a34a; /* green */
+}
+
+.password-rules li.valid::before {
+  opacity: 1;
+}
+
+/* Typed but weak */
+.password-rules li.warning {
+  color: #f59e0b; /* yellow */
+}
+
+
+
 
 @keyframes float {
   0% {
