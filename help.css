@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
+/*this is the general padding and margin of the page*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --colour: #f5f5f5;
+  --bc_colour: #fff;
+}
+
+/*this is the font, height of the webpage and the overflow-x prevent the x axis to be able to scroll*/
+body {
+  font-family: "Anta", sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/*the link on the navbar*/
+a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*the those content of the animationer banner*/
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr ;
+  grid-template-columns: 8vw 1fr;
+  grid-template-areas:
+    "header header header"
+    "leftSide body rightSide";
+}
+/*these are the gris-area that place them in they places*/
+.header {
+  grid-area: header;
+}
+.leftSide {
+  grid-area: leftSide;
+}
+.body {
+  grid-area: body;
+}
+.rightSide {
+  grid-area: rightSide;
+}
+.footer {
+  grid-area: footer;
+}
+nav {
+  position: relative;
+  width: auto;
+  height: 50px;
+  z-index: 1;
+}
+/*the links code*/
+nav a {
+  text-decoration: none;
+  color: #333333;
+  text-transform: uppercase;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+
+nav .animation {
+  position: absolute;
+  height: 5px;
+  bottom: 0;
+  z-index: 0;
+  background: #4292ed;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+
+a:nth-child(1) {
+  width: 100px;
+}
+
+a:nth-child(1) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-home,
+a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+}
+
+a:nth-child(2) {
+  width: 130px;
+}
+
+a:nth-child(2) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-contact,
+a:nth-child(2):hover ~ .animation {
+  width: 120px;
+  left: 110px;
+}
+
+a:nth-child(3) {
+  width: 100px;
+}
+
+a:nth-child(3) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-help,
+a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 240px;
+}
+
+a:nth-child(4) {
+  width: 110px;
+}
+
+a:nth-child(4) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-about,
+a:nth-child(4):hover ~ .animation {
+  width: 110px;
+  left: 340px;
+}
+
+a:nth-child(5) {
+  width: 100px;
+}
+
+a:nth-child(5) > p:hover {
+  color: #4292ed;
+}
+
+nav .start-blog,
+a:nth-child(5):hover ~ .animation {
+  width: 100px;
+  left: 460px;
+}
+/*that is the nav bar containing the links*/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333333;
+  height: 50px;
+}
+
+/*this is the container of the svg(Welcome to Sebanji) */
+.container_for_ani {
+  background-image: url(beautiful-cartoon-fantasy-landscape-with-sunset-sunrise-mountain-range-cold-morning-mist-forest_730030-233.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+/*this is used to design the svg those lines animation*/
+.text > svg path {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 0.3;
+  stroke-dasharray: 550;
+  stroke-dashoffset: 550;
+  animation: textAnimation 4s ease-in-out 1 forwards;
+}
+/*this is the keyframes defining the textAnimation*/
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 550;
+  }
+
+  80% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*the help bot section😭🥰*/
+
+:root {
+    --text: #f0f8ff;
+    --background: #1a1a2e;
+    --primary: #16213e;
+    --secondary: #0f3460;
+    --accent: #e94560;
+}
+
+h2 {
+    margin-left: 20px;
+    color: var(--text);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.chat-container {
+    max-width: 360px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--primary);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+#chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    border-bottom: 2px solid var(--secondary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    color: var(--text);
+}
+
+
+
+#user-input {
+    width: 65%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#user-input::placeholder {
+    color: var(--text);
+    opacity: 0.7;
+}
+
+button {
+    padding: 10px 18px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+#chat-box p {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease forwards;
+    font-size: 14px;
+}
+
+#chat-box p:nth-child(odd) {
+    background-color: #22c1c3; /* User Bubble */
+    color: var(--background);
+}
+
+#chat-box p:nth-child(even) {
+    background-color: #ffde59; /* AI Bubble */
+    color: var(--background);
+}
+
+
+
+
+
+
+.leftSide {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  color: #333333;
+  width: 8vw;
+  height: 100%;
+}
+/*the dark toggle mode it show slowing change and the layout should be #1a1a1a*/
+.dark-mode {
+  transition: 0.3s;
+  background-color: #1a1a1a;
+}
+/*this applies the dark mode changes to the header and footer*/
+.dark-mode .header {
+  background-color: #252525;
+  color: #f5f5f5;
+}
+/*this applies to the dark mode change on the body layout*/
+.dark-mode .body {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/*the color of the right layout and left layout when then dark mode happens*/
+.dark-mode .rightSide {
+  background-color: #3a3a3a;
+  color: #f5f5f5;
+}
+.dark-mode .leftSide {
+  background-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
+/*that happens to the link when the dark mode is applied */
+.dark-mode a {
+  color: #f5f5f5;
+}
+/*the switch container containing the input and span */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  margin-top: auto;
+  right: 20px;
+  bottom: 3px;
+}
+/*this describes the input opacity,width and height of the input making it not seen*/
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/*this is the span creating the circle*/
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+}
+/*this is the code for the span before so it should have nothing in it it should have a certain height and width, how is transition and the border radius*/
+.slider::before {
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  height: 13px;
+  width: 13px;
+  transition: 0.3s;
+  background-color: white;
+  border-radius: 34px;
+  content: "";
+}
+/*this code is when the input is clicked and the slider should be rgb(127, 255, 146)*/
+input:checked + .slider {
+  background-color: rgb(127, 255, 146);
+}
+/*this code is for the movement of the circle*/
+input:checked + .slider:before {
+  transform: translateX(13px);
+}

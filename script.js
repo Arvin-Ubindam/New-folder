@@ -317,7 +317,7 @@ const items = [
     id: 26,
     image: "imgs/M0455CBAAM900_E01.webp",
     name: "Saddle Bag",
-    price: 3450,
+    price: 345,
     category: "women-bags",
     description: "Elegant party dress.",
     stock: "In stock",
@@ -328,7 +328,7 @@ const items = [
     id: 27,
     image: "imgs/M1365UDCEM49E_E01.webp",
     name: "Dior Groove 25 Bag",
-    price: 2600,
+    price: 260,
     category: "men-bags",
     description: "Elegant party dress.",
     stock: "In stock",
@@ -339,7 +339,7 @@ const items = [
     id: 28,
     image: "imgs/M2835OSNWM55G_E03.webp",
     name: "Dior Toujours Tote Bag",
-    price: 3450,
+    price: 345,
     category: "women-bags",
     description: "Elegant party dress.",
     stock: "In stock",
@@ -350,7 +350,7 @@ const items = [
     id: 29,
     image: "imgs/M3372UNOZM030_E01.webp",
     name: "Dior Caro Bucket Bag",
-    price: 3450,
+    price: 345,
     category: "women-bags",
     description: "Elegant party dress.",
     stock: "In stock",
@@ -377,8 +377,18 @@ const categorySelect = document.getElementById("category-selection");
 const ItemDetail = document.getElementById("item-detail");
 itemDetail.classList.add("hidden");
 
+const noResults = document.getElementById("no-results");
+
 function renderItems() {
   itemsContainer.innerHTML = "";
+
+  if (filteredItems.length === 0) {
+    noResults.classList.remove("hidden");
+    return;
+  } else {
+    noResults.classList.add("hidden");
+  }
+
   filteredItems.forEach((item) => {
     const itemDiv = document.createElement("div");
     itemDiv.className = "item";
@@ -394,6 +404,7 @@ function renderItems() {
     itemsContainer.appendChild(itemDiv);
   });
 }
+
 
 function showItemDetail(item) {
   // Update all detail elements
@@ -592,6 +603,42 @@ function updateRule(element, isValid, value) {
     element.classList.add("warning");
   }
 }
+
+const authModal = document.getElementById("authModal");
+const closeAuth = document.getElementById("closeAuth");
+const Forms = document.querySelector(".forms");
+
+// OPEN MODAL (Account button)
+document.getElementById("accountBtn")?.addEventListener("click", (e) => {
+  e.preventDefault();
+  authModal.style.display = "flex";
+});
+
+// CLOSE MODAL (works on BOTH sign in & sign up)
+closeAuth.addEventListener("click", () => {
+  authModal.style.display = "none";
+  Forms.classList.remove("signup-active"); // reset to sign in
+});
+
+// CLICK OUTSIDE TO CLOSE (optional but pro)
+authModal.addEventListener("click", (e) => {
+  if (e.target === authModal) {
+    authModal.style.display = "none";
+    Forms.classList.remove("signup-active");
+  }
+});
+
+
+document.getElementById("toSignup").addEventListener("click", (e) => {
+  e.preventDefault();
+  forms.classList.add("signup-active");
+});
+
+document.getElementById("toSignin").addEventListener("click", (e) => {
+  e.preventDefault();
+  forms.classList.remove("signup-active");
+});
+
 
 
 window.addEventListener("load", function () {

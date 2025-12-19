@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body>
+    <form>
+      <h4 class="payment-option-txt">
+        <span><img src="wallet.png" /></span>Select Payment Option
+      </h4>
+      <div class="top_payment">
+        <div class="gg-apple">
+          <img src="google-pay.png" class="logos" />
+        </div>
+        <p>or</p>
+        <div class="gg-apple">
+          <img src="apple-pay.png" class="logos" />
+        </div>
+      </div>
+      <div class="payment">
+        <div class="payment_txt">
+          <input type="radio" name="Paypal" />
+          <h4>PayPal</h4>
+        </div>
+        <div class="payment_logo">
+          <img src="paypal.png" class="logos" />
+        </div>
+      </div>
+      <span class="border-line"></span>
+      <div class="card_payment">
+        <div class="card-top">
+          <div class="payment_txt">
+            <input type="radio" name="Paypal" />
+            <h4>Credit card</h4>
+          </div>
+          <div class="payment_logo">
+            <img src="visa.png" class="card-logo" />
+            <img src="card.png" class="card-logo" />
+          </div>
+        </div>
+        <div class="card-num">
+          <label for="">Card number</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            autocomplete="cc-number"
+            maxlength="19"
+            name="card-number"
+            placeholder="0000 0000 0000 0000"
+            id="cardNumber"
+          />
+        </div>
+        <div class="ex_cvc">
+          <div class="expiry">
+            <label for="">Expiry date</label><br>
+            <input
+              type="text"
+              inputmode="numeric"
+              autocomplete="cc-exp"
+              maxlength="5"
+              placeholder="MM / YY"
+              id="expiry"
+            />
+          </div>
+          <div class="cvc">
+            <label for="">CVV/CVC</label><br>
+            <input
+              type="password"
+              inputmode="numeric"
+              autocomplete="cc-csc"
+              maxlength="3"
+              placeholder="CVC"
+              id="cvc"
+            />
+          </div>
+        </div>
+        <div class="card-num">
+          <label for="">Cardholder Name</label>
+          <input
+            type="text"
+            name="cardholder-name"
+            placeholder="Cardholder Name"
+          />
+        </div>
+      </div>
+      <div id="btn">
+
+      </div>
+      <div class="check"><input type="checkbox"><p>Save my information for a checkout with a Shop account</p></div>
+    </form>
+  </body>
+  <script src="checkout.js"></script>
+</html>
